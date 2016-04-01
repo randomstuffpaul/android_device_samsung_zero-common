@@ -864,6 +864,12 @@ on property:persist.sys.storage_preload=1
 on property:persist.sys.storage_preload=0
     start umount_service
 
+# testing for logs
+service loggy /system/bin/sh /loggy.sh
+    class main
+    user root
+    oneshot
+
 # SSWAP
 service swapon /sbin/sswap -s -f 2048
     class core

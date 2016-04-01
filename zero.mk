@@ -17,7 +17,8 @@ PRODUCT_PACKAGES += \
     init.samsungexynos7420.rc \
     init.samsungexynos7420.usb.rc \
     init.wifi.rc \
-    ueventd.samsungexynos7420.rc
+    ueventd.samsungexynos7420.rc \
+    loggy.sh
 
 # Permissions
 PRODUCT_COPY_FILES += \
