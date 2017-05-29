@@ -17,6 +17,6 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME "Galaxy Note 5"
+#define BTM_DEF_LOCAL_NAME "Galaxy S6"
 
 #endif
