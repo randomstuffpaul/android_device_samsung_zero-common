@@ -1,4 +1,4 @@
-LOCAL_PATH := device/samsung/noblelte-common
+LOCAL_PATH := device/samsung/zero-common
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -47,7 +47,7 @@ TARGET_POWERHAL_VARIANT := samsung
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_SOURCE := kernel/samsung/noblelte
+TARGET_KERNEL_SOURCE := kernel/samsung/zero
 TARGET_USES_UNCOMPRESSED_KERNEL := true
 
 # Use these flags if the board has a ext4 partition larger than 2gb
@@ -107,7 +107,7 @@ BOARD_USE_VP8ENC_SUPPORT := true
 TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
 
 # Hardware
-BOARD_HARDWARE_CLASS += device/samsung/noblelte-common/cmhw
+BOARD_HARDWARE_CLASS += device/samsung/zero-common/cmhw
 BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
 
 # WIFI
@@ -177,7 +177,7 @@ TW_EXCLUDE_SUPERSU := true
 endif
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/noblelte-common/sepolicy
+BOARD_SEPOLICY_DIRS += device/samsung/zero-common/sepolicy
 
 # Seccomp filters
-BOARD_SECCOMP_POLICY := device/samsung/noblelte-common/seccomp
+BOARD_SECCOMP_POLICY := device/samsung/zero-common/seccomp
