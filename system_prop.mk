@@ -6,12 +6,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path="/efs/bluetooth/bt_addr"
 
-# Bluetooth workaround:
-# The new CAF code defaults to MCT HAL, but we
-# need the old H4 HAL for our Broadcom WiFi.
-PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=rome
-
 # Dalvik/Art
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.dex2oat_thread_count=4 \
