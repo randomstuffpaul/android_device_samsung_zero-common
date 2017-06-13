@@ -51,9 +51,13 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
+find "$CM_ROOT"/vendor/$VENDOR/$DEVICE_COMMON -type f -exec dos2unix -q {} \;
+
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 
 extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
+
+find "$CM_ROOT"/vendor/$VENDOR/$DEVICE -type f -exec dos2unix -q {} \;
 
 "$MY_DIR"/setup-makefiles.sh
