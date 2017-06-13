@@ -48,7 +48,7 @@ public class DisplayColorCalibration {
         if (!FileUtils.isFileWritable(RGB_FILE) && !sUseGPUMode) {
             return false;
         }
-        
+
         return true;
     }
 
