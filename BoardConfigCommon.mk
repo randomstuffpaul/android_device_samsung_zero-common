@@ -71,6 +71,9 @@ BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 # Audio HAL variant
 TARGET_AUDIOHAL_VARIANT := samsung
 
+# Fingerprint
+TARGET_SEC_FP_HAL_VARIANT := bauth
+
 # Graphics
 USE_OPENGL_RENDERER := true
 

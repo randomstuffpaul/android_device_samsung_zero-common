@@ -255,8 +255,6 @@ lib64/libsec-ril.so|08840d5de37c3692fec9c8c4ac430c21857c8bdc
 sbin/cbd|7a8e96d84382e19d58db7c9ee7c0411040311058
 
 ### Fingerprint
-bin/fingerprintd
-lib64/hw/fingerprint.default.so
 lib64/libbauthserver.so
 lib64/libbauthtzcommon.so
 lib64/libsynaFpSensorTestNwd.so
