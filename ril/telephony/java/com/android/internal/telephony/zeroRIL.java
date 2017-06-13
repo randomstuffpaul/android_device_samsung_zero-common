@@ -34,11 +34,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * RIL customization for Galaxy Alpha (GSM) LTE devices
+ * RIL customization for Galaxy S6 (GSM) LTE devices
  *
  * {@hide}
  */
-public class SlteRIL extends RIL {
+public class zeroRIL extends RIL {
 
     /**********************************************************
      * SAMSUNG REQUESTS
@@ -66,11 +66,11 @@ public class SlteRIL extends RIL {
     // divide the response array without prior knowledge of the number of elements.
     protected int mQANElements = SystemProperties.getInt("ro.ril.telephony.mqanelements", 4);
 
-    public SlteRIL(Context context, int preferredNetworkType, int cdmaSubscription) {
+    public zeroRIL(Context context, int preferredNetworkType, int cdmaSubscription) {
         this(context, preferredNetworkType, cdmaSubscription, null);
     }
 
-    public SlteRIL(Context context, int preferredNetworkType,
+    public zeroRIL(Context context, int preferredNetworkType,
                    int cdmaSubscription, Integer instanceId) {
         super(context, preferredNetworkType, cdmaSubscription, instanceId);
     }
@@ -110,29 +110,29 @@ public class SlteRIL extends RIL {
             case SmsManager.STATUS_ON_ICC_UNSENT:
                 return 2;
         }
-        
+
         // Default to READ.
         return 1;
     }
-    
+
     @Override
     public void writeSmsToSim(int status, String smsc, String pdu, Message response) {
         status = translateStatus(status);
-        
+
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_WRITE_SMS_TO_SIM,
                                           response);
-        
+
         rr.mParcel.writeInt(status);
         rr.mParcel.writeString(pdu);
         rr.mParcel.writeString(smsc);
         rr.mParcel.writeInt(255);     /* Samsung */
-        
+
         if (RILJ_LOGV) {
             riljLog(rr.serialString() + "> "
                     + requestToString(rr.mRequest)
                     + " " + status);
         }
-        
+
         send(rr);
     }
 
@@ -332,7 +332,7 @@ public class SlteRIL extends RIL {
         int tdScdmaRscp = p.readInt();
         // constructor sets default true, makeSignalStrengthFromRilParcel does not set it
         boolean isGsm = true;
-        
+
         if ((lteSignalStrength & 0xff) == 255 || lteSignalStrength == 99) {
             lteSignalStrength = 99;
             lteRsrp = SignalStrength.INVALID;
@@ -342,7 +342,7 @@ public class SlteRIL extends RIL {
         } else {
             lteSignalStrength &= 0xff;
         }
-        
+
         if (RILJ_LOGD)
             riljLog("gsmSignalStrength:" + gsmSignalStrength + " gsmBitErrorRate:" + gsmBitErrorRate +
                     " cdmaDbm:" + cdmaDbm + " cdmaEcio:" + cdmaEcio + " evdoDbm:" + evdoDbm +
@@ -350,12 +350,12 @@ public class SlteRIL extends RIL {
                     " lteSignalStrength:" + lteSignalStrength + " lteRsrp:" + lteRsrp +
                     " lteRsrq:" + lteRsrq + " lteRssnr:" + lteRssnr + " lteCqi:" + lteCqi +
                     " tdScdmaRscp:" + tdScdmaRscp + " isGsm:" + (isGsm ? "true" : "false"));
-        
+
         return new SignalStrength(gsmSignalStrength, gsmBitErrorRate, cdmaDbm, cdmaEcio, evdoDbm,
                                   evdoEcio, evdoSnr, lteSignalStrength, lteRsrp, lteRsrq, lteRssnr, lteCqi,
                                   tdScdmaRscp, isGsm);
     }
-    
+
     private void constructGsmSendSmsRilRequest(RILRequest rr, String smscPDU, String pdu) {
         rr.mParcel.writeInt(2);
         rr.mParcel.writeString(smscPDU);
@@ -369,12 +369,12 @@ public class SlteRIL extends RIL {
     @Override
     public void sendSMSExpectMore(String smscPDU, String pdu, Message result) {
         Rlog.v(RILJ_LOG_TAG, "XMM7260: sendSMSExpectMore");
-        
+
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_SEND_SMS, result);
         constructGsmSendSmsRilRequest(rr, smscPDU, pdu);
-        
+
         if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
-        
+
         send(rr);
     }
 
@@ -438,7 +438,7 @@ public class SlteRIL extends RIL {
         }
 
         if (newResponse != origResponse) {
-            riljLog("SlteRIL: remap unsolicited response from " +
+            riljLog("zeroRIL: remap unsolicited response from " +
                     origResponse + " to " + newResponse);
             p.setDataPosition(dataPosition);
             p.writeInt(newResponse);
