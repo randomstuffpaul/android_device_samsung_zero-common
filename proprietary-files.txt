@@ -248,10 +248,11 @@ lib64/hw/sensors.universal7420.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 ### RIL
-lib/libsecnativefeature.so
-lib64/libsecnativefeature.so
-lib/libsec-ril.so
-lib64/libsec-ril.so
+lib/libsecnativefeature.so|b63a2a0af6d1bddc3bde76e96285e327103b0cf9
+lib64/libsecnativefeature.so|a24c6f2c248f31a823dfb933ebffd2240188f645
+lib/libsec-ril.so|62e35512d29293fd46bfacd53dc472fa89ef639b
+lib64/libsec-ril.so|08840d5de37c3692fec9c8c4ac430c21857c8bdc
+sbin/cbd|7a8e96d84382e19d58db7c9ee7c0411040311058
 
 ### Fingerprint
 bin/fingerprintd
