@@ -159,12 +159,6 @@ PRODUCT_PACKAGES += \
     fingerprint.exynos5 \
     libbauthtzcommon_shim
 
-# Offmode charger
-# Use cm images if available, aosp ones otherwise
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    cm_charger_res_images
-
 # Samsung Doze
 PRODUCT_PACKAGES += \
     SamsungDoze
