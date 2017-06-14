@@ -299,10 +299,10 @@ lib64/libegis_fp_normal_sensor_test.so
 
 ### Mobicore
 bin/mcDriverDaemon
-lib/libMcRegistry.so
-lib64/libMcRegistry.so
-lib/libMcClient.so
-lib64/libMcClient.so
+vendor/lib/libMcClient.so
+vendor/lib/libMcRegistry.so
+vendor/lib64/libMcClient.so
+vendor/lib64/libMcRegistry.so
 app/FFFFFFFF000000000000000000000001.drbin
 app/mcRegistry/00060308060501020000000000000000.tlbin
 app/mcRegistry/07010000000000000000000000000000.tlbin
