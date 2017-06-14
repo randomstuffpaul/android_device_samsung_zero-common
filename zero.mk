@@ -163,6 +163,10 @@ PRODUCT_PACKAGES += \
     fingerprint.exynos5 \
     libbauthtzcommon_shim
 
+# IR
+PRODUCT_PACKAGES += \
+    consumerir.exynos5 \
+
 # Samsung Doze
 PRODUCT_PACKAGES += \
     SamsungDoze
